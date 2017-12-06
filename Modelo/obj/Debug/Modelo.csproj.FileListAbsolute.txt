@@ -1,0 +1,7 @@
+C:\Users\Tadeo\source\repos\App\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\Tadeo\source\repos\App\Modelo\bin\Debug\Modelo.dll
+C:\Users\Tadeo\source\repos\App\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Tadeo\source\repos\App\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\Tadeo\source\repos\App\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Tadeo\source\repos\App\Modelo\obj\Debug\Modelo.dll
+C:\Users\Tadeo\source\repos\App\Modelo\obj\Debug\Modelo.pdb
