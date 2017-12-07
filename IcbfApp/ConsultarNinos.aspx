@@ -27,7 +27,7 @@
             <asp:TextBox ID="txtDocumento" runat="server"></asp:TextBox>
         </div>
         <div>
-            <asp:Label ID="Label5" runat="server" Text="Label">Fecha</asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="Label">Fecha Nacimiento</asp:Label>
             <asp:Calendar ID="dtFecha" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" SelectedDate="12/06/2017 17:31:37" Width="350px" OnSelectionChanged="dtFecha_SelectionChanged">
                 <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                 <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
@@ -38,6 +38,19 @@
             </asp:Calendar>
             <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
         </div>
+        <div>
+            <asp:Label ID="Label12" runat="server" Text="Label">Ciudad Nacimiento</asp:Label>
+            <asp:TextBox ID="txtCiudad" runat="server"></asp:TextBox>
+        </div>
+        <div>
+            <asp:Label ID="Label13" runat="server" Text="Label">Dirección </asp:Label>
+            <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+        </div>
+        <div>
+            <asp:Label ID="Label14" runat="server" Text="Label">Telefono</asp:Label>
+            <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+        </div>
+
         <div>
             <asp:Label ID="Label6" runat="server" Text="Label">Peso</asp:Label>
             <asp:TextBox ID="txtPeso" runat="server"></asp:TextBox>
@@ -82,53 +95,35 @@
         <br />
         <div>
             <asp:Button ID="btnCrear" runat="server" Text="Crear" OnClick="Button1_Click" Width="86px" />
+            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="Button2_Click" />
+             <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="Button3_Click" Width="82px" />
         </div>
 
-        <div>
-            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="Button1_Click" />
-        </div>
-
-        <div>
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="Button1_Click" Width="82px" />
-        </div>
-
-        <div>
-            <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button1_Click" />
-        </div>
-
-        <div>
-            <asp:Button ID="Button5" runat="server" Text="Button" OnClick="Button1_Click" />
-        </div>
-
-
-
-
-
-
+        
+        
         <br />
 
         <div>
-            <asp:GridView ID="gvNinos" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="gvNinos" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvNinos_RowCommand">
 
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
-                    <asp:BoundField DataField="nombres" HeaderText="Nombres" />
-                    <asp:BoundField DataField="apellidos" HeaderText="Apellidos" />
                     <asp:BoundField DataField="Documento" HeaderText="Numero Documento" />
+                    <asp:BoundField DataField="nombres" HeaderText="Nombres" />
+                    <asp:BoundField DataField="apellidos" HeaderText="Apellidos" />                    
                     <asp:BoundField DataField="fechaNacimiento" HeaderText="Fecha Nacimiento" />
+                    <asp:BoundField DataField="ciudadNacimiento" HeaderText="Ciudad Nacimiento" />
+                    <asp:BoundField DataField="direccion" HeaderText="Dirección" />
+                    <asp:BoundField DataField="telefono" HeaderText="Telefono" />
                     <asp:BoundField DataField="peso" HeaderText="Peso" />
                     <asp:BoundField DataField="talla" HeaderText="Talla" />
                     <asp:BoundField DataField="tipoSangre" HeaderText="Tipo Sangre" />
                     <asp:BoundField DataField="eps" HeaderText="EPS" />
                     <asp:BoundField DataField="Acudiente" HeaderText="Acudiente" />
                     <asp:BoundField DataField="Jardin" HeaderText="Jardin" />
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:ImageButton ID="imgEditar" runat="server" CommandName="editar" ImageUrl="~/img/editar.jpg" ToolTip="Editar" Width="20px"></asp:ImageButton>
-                            <asp:ImageButton ID="imgEliminar" runat="server" CommandName="eliminar" ToolTip="Eliminar" ImageUrl="~/img/eliminar.png" Width="20px" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:ButtonField CommandName="eliminar" HeaderText="Eliminar" ShowHeader="true" Text="Eliminar" />
+                    <asp:ButtonField CommandName="editar" HeaderText="Editar" ShowHeader="true" Text="Editar" />
                 </Columns>
                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

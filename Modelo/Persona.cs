@@ -100,7 +100,6 @@ namespace Modelo
                 sentencia.correo = persona.correo;
                 sentencia.codJardin = persona.codJardin;
                 bd.SubmitChanges();
-
                 return bandera = true;
             }
             catch (Exception e)
@@ -120,7 +119,7 @@ namespace Modelo
                             join a in bd.Personas on p.id equals a.id
                             join g in bd.Jardin on p.codJardin equals g.id
                             where p.tipoRol == 3
-                            select new { Codigo = p.id, Documento = p.numeroIdentificacion, p.nombres, p.apellidos, p.fechaNacimiento, p.peso, p.talla, p.tipoSangre, p.eps, Acudiente = p.Personas1.nombres, Jardin = g.nombreJardin };
+                            select new { Codigo = p.id, Documento = p.numeroIdentificacion, p.nombres, p.apellidos, p.fechaNacimiento, p.ciudadNacimiento,p.direccion, p.telefono, p.peso, p.talla, p.tipoSangre, p.eps, Acudiente = p.Personas1.nombres, Jardin = g.nombreJardin };
             return sentencia;
 
         }
@@ -130,7 +129,7 @@ namespace Modelo
             ORMDataContext bd = new ORMDataContext();
 
             var sentencia = (from p in bd.Personas
-                             where p.talla == null
+                             where p.tipoRol == 4
                              select p).ToList();
             return sentencia;
         }

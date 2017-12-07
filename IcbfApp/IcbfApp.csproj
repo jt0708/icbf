@@ -143,6 +143,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="img\editar.jpg" />
+    <Content Include="img\eliminar.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="Scripts\bootstrap.js" />
